@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="24" version="1.1" version_name="Godot Engine v1.1.stable.custom_build">
-	<ext_resource path="res://player.xml" type="PackedScene"></ext_resource>
+	<ext_resource path="res://scenes/player.xml" type="PackedScene"></ext_resource>
 	<ext_resource path="res://media/textures/world/gravel02_c.jpg" type="Texture"></ext_resource>
 	<resource type="Environment" path="local://1">
 		<bool name="ambient_light/enabled"> True </bool>
@@ -637,7 +637,7 @@
 							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="1" shared="false">
-								<string> "res://player.gd" </string>
+								<string> "res://scripts/player.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>
@@ -650,7 +650,7 @@
 					</dictionary>
 				</dictionary>
 				<resource  resource_type="Environment" path="local://1">  </resource>
-				<resource  resource_type="PackedScene" path="res://player.xml">  </resource>
+				<resource  resource_type="PackedScene" path="res://scenes/player.xml">  </resource>
 				<transform> 1, 0, 0, 0, 1, -2.22045e-16, 0, 0, 1, 0, 2.08509, 0 </transform>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
@@ -748,7 +748,7 @@
 							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="1" shared="false">
-								<string> "res://player.gd" </string>
+								<string> "res://scripts/player.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>
