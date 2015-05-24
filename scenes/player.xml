@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="5" version="1.1" version_name="Godot Engine v1.1.stable.custom_build">
+<resource_file type="PackedScene" subresource_count="7" version="1.1" version_name="Godot Engine v1.1.stable.custom_build">
 	<ext_resource path="res://scripts/player.gd" type="Script"></ext_resource>
+	<ext_resource path="res://media/models/stg44.msh" type="Mesh"></ext_resource>
 	<ext_resource path="res://fonts/roboto.fnt" type="Font"></ext_resource>
 	<resource type="CapsuleShape" path="local://1">
 		<real name="radius"> 0.4 </real>
@@ -11,6 +12,43 @@
 		<real name="length"> 0.3 </real>
 
 	</resource>
+	<resource type="FixedMaterial" path="local://3">
+		<bool name="flags/visible"> True </bool>
+		<bool name="flags/double_sided"> False </bool>
+		<bool name="flags/invert_faces"> False </bool>
+		<bool name="flags/unshaded"> True </bool>
+		<bool name="flags/on_top"> False </bool>
+		<bool name="flags/lightmap_on_uv2"> True </bool>
+		<bool name="flags/colarray_is_srgb"> True </bool>
+		<int name="params/blend_mode"> 0 </int>
+		<int name="params/depth_draw"> 1 </int>
+		<real name="params/line_width"> 0 </real>
+		<bool name="fixed_flags/use_alpha"> False </bool>
+		<bool name="fixed_flags/use_color_array"> False </bool>
+		<bool name="fixed_flags/use_point_size"> False </bool>
+		<bool name="fixed_flags/discard_alpha"> False </bool>
+		<bool name="fixed_flags/use_xy_normalmap"> False </bool>
+		<color name="params/diffuse"> 0, 0, 0, 1 </color>
+		<color name="params/specular"> 0, 0, 0, 1 </color>
+		<color name="params/emission"> 0, 0, 0, 1 </color>
+		<int name="params/specular_exp"> 40 </int>
+		<real name="params/detail_mix"> 1 </real>
+		<int name="params/normal_depth"> 1 </int>
+		<int name="params/shader"> 0 </int>
+		<real name="params/shader_param"> 0.5 </real>
+		<int name="params/glow"> 0 </int>
+		<real name="params/point_size"> 1 </real>
+		<transform name="uv_xform"> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+		<resource name="textures/diffuse"></resource>		<int name="textures/diffuse_tc"> 0 </int>
+		<resource name="textures/detail"></resource>		<int name="textures/detail_tc"> 0 </int>
+		<resource name="textures/specular"></resource>		<int name="textures/specular_tc"> 0 </int>
+		<resource name="textures/emission"></resource>		<int name="textures/emission_tc"> 0 </int>
+		<resource name="textures/specular_exp"></resource>		<int name="textures/specular_exp_tc"> 0 </int>
+		<resource name="textures/glow"></resource>		<int name="textures/glow_tc"> 0 </int>
+		<resource name="textures/normal"></resource>		<int name="textures/normal_tc"> 0 </int>
+		<resource name="textures/shade_param"></resource>		<int name="textures/shade_param_tc"> 0 </int>
+
+	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
@@ -18,7 +56,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="87">
+			<string_array  len="104">
 				<string> "player" </string>
 				<string> "RigidBody" </string>
 				<string> "_import_path" </string>
@@ -75,6 +113,23 @@
 				<string> "environment" </string>
 				<string> "h_offset" </string>
 				<string> "v_offset" </string>
+				<string> "TestCube" </string>
+				<string> "geometry/visible" </string>
+				<string> "geometry/material_override" </string>
+				<string> "geometry/cast_shadow" </string>
+				<string> "geometry/receive_shadows" </string>
+				<string> "geometry/range_begin" </string>
+				<string> "geometry/range_end" </string>
+				<string> "geometry/extra_cull_margin" </string>
+				<string> "geometry/billboard" </string>
+				<string> "geometry/billboard_y" </string>
+				<string> "geometry/depth_scale" </string>
+				<string> "geometry/visible_in_all_rooms" </string>
+				<string> "geometry/use_baked_light" </string>
+				<string> "geometry/baked_light_tex_id" </string>
+				<string> "MeshInstance" </string>
+				<string> "mesh/mesh" </string>
+				<string> "mesh/skeleton" </string>
 				<string> "label" </string>
 				<string> "Label" </string>
 				<string> "visibility/opacity" </string>
@@ -108,11 +163,11 @@
 				<string> "percent_visible" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 7 </int>
+			<int> 9 </int>
 			<string> "nodes" </string>
-			<int_array  len="243"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 3, 11, 7, 12, 8, 13, 3, 14, 9, 15, 4, 16, 10, 17, 11, 18, 11, 19, 2, 20, 3, 21, 12, 22, 2, 23, 3, 24, 3, 25, 13, 26, 14, 27, 14, 28, 15, 29, 16, 30, 17, 31, 13, 32, 13, 0, 0, 0, 34, 33, -1, 6, 2, 0, 3, 1, 35, 6, 4, 2, 36, 5, 37, 3, 0, 0, 0, 34, 38, -1, 6, 2, 0, 3, 1, 35, 8, 4, 2, 36, 7, 37, 3, 0, 0, 0, 40, 39, -1, 6, 2, 0, 3, 1, 35, 18, 4, 2, 41, 2, 42, 19, 0, 0, 0, 43, 31, -1, 3, 2, 0, 3, 1, 4, 2, 0, 4, 0, 45, 44, -1, 14, 2, 0, 3, 1, 35, 20, 4, 2, 46, 13, 47, 21, 48, 22, 49, 23, 50, 9, 51, 3, 52, 24, 53, 25, 54, 11, 55, 11, 0, 0, 0, 57, 56, -1, 31, 2, 0, 4, 2, 58, 10, 59, 10, 60, 9, 61, 26, 62, 27, 63, 28, 64, 21, 65, 0, 66, 0, 67, 0, 68, 0, 69, 2, 70, 2, 71, 4, 72, 10, 73, 29, 74, 11, 75, 10, 76, 10, 77, 10, 78, 11, 79, 3, 80, 3, 81, 30, 82, 4, 83, 13, 84, 3, 85, 3, 86, 31, 0 </int_array>
+			<int_array  len="333"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 3, 11, 7, 12, 8, 13, 3, 14, 9, 15, 4, 16, 10, 17, 11, 18, 11, 19, 2, 20, 3, 21, 12, 22, 2, 23, 3, 24, 3, 25, 13, 26, 14, 27, 14, 28, 15, 29, 16, 30, 17, 31, 13, 32, 13, 0, 0, 0, 34, 33, -1, 6, 2, 0, 3, 1, 35, 6, 4, 2, 36, 5, 37, 3, 0, 0, 0, 34, 38, -1, 6, 2, 0, 3, 1, 35, 8, 4, 2, 36, 7, 37, 3, 0, 0, 0, 40, 39, -1, 6, 2, 0, 3, 1, 35, 18, 4, 2, 41, 2, 42, 19, 0, 0, 0, 43, 31, -1, 3, 2, 0, 3, 1, 4, 2, 0, 4, 0, 45, 44, -1, 14, 2, 0, 3, 1, 35, 20, 4, 2, 46, 13, 47, 21, 48, 22, 49, 23, 50, 9, 51, 3, 52, 24, 53, 25, 54, 11, 55, 11, 0, 5, 0, 56, 56, -1, 18, 2, 0, 3, 1, 35, 26, 4, 2, 14, 9, 57, 2, 58, 27, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 0, 5, 0, 70, 70, -1, 20, 2, 0, 3, 1, 35, 28, 4, 2, 14, 9, 57, 2, 58, 25, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 71, 29, 72, 30, 0, 0, 0, 74, 73, -1, 31, 2, 0, 4, 2, 75, 10, 76, 10, 77, 9, 78, 31, 79, 32, 80, 33, 81, 21, 82, 0, 83, 0, 84, 0, 85, 0, 86, 2, 87, 2, 88, 4, 89, 10, 90, 34, 91, 11, 92, 10, 93, 10, 94, 10, 95, 11, 96, 3, 97, 3, 98, 35, 99, 4, 100, 13, 101, 3, 102, 3, 103, 36, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="32" shared="false">
+			<array  len="37" shared="false">
 				<node_path> "" </node_path>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<bool> True </bool>
@@ -193,9 +248,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.050002 </real>
+									<real> 0.362503 </real>
 									<string> "y_rot" </string>
-									<real> 17.287439 </real>
+									<real> 43.062798 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -277,7 +332,12 @@
 				<real> 0.1 </real>
 				<real> 100 </real>
 				<int> -1 </int>
-				<resource name=""></resource>				<real> 1002 </real>
+				<resource name=""></resource>				<transform> 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.75, 0 </transform>
+				<resource  resource_type="Material" path="local://3">  </resource>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.3, -0.3 </transform>
+				<resource  resource_type="Mesh" path="res://media/models/stg44.msh">  </resource>
+				<node_path> ".." </node_path>
+				<real> 1002 </real>
 				<real> 8 </real>
 				<real> 1271 </real>
 				<resource  resource_type="Font" path="res://fonts/roboto.fnt">  </resource>

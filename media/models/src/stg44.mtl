@@ -1,0 +1,38 @@
+# Blender MTL File: 'stg44.blend'
+# Material Count: 3
+
+newmtl stg
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd stg44arranged.png
+map_Bump stg44_normal.png
+map_Ks stg44_specular.png
+
+newmtl stg_NONE
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump stg44_normal.png
+map_Kd stg44_diffuse.png
+map_Ks stg44_specular.png
+
+newmtl stg_stg44_diffuse.dds
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd stg44_diffuse.png
+map_Bump stg44_normal.png
+map_Ks stg44_specular.png
