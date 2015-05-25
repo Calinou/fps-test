@@ -60,7 +60,7 @@ func _integrate_forces(state):
 		diff -= vertdiff
 		diff = diff.normalized() * clamp(diff.length(), 0, max_accel / state.get_step())
 		diff += vertdiff
-		get_node("label").set_text(str(OS.get_frames_per_second(), "        ", int(yaw), " ", int(pitch)))
+		get_node("label").set_text(str(OS.get_frames_per_second(), " FPS       ", int(yaw), " ", int(pitch)))
 		apply_impulse(Vector3(), diff * get_mass())
 		if Input.is_action_pressed("jump"):
 			apply_impulse(Vector3(), normal * jump_speed * get_mass())

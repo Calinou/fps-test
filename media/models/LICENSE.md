@@ -1,5 +1,1 @@
-stg44:
-
-© 2015 Duion
-
-CC BY 3.0
+* stg44: © 2015 Duion, CC BY 3.0

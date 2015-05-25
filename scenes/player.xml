@@ -56,7 +56,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="104">
+			<string_array  len="123">
 				<string> "player" </string>
 				<string> "RigidBody" </string>
 				<string> "_import_path" </string>
@@ -130,6 +130,25 @@
 				<string> "MeshInstance" </string>
 				<string> "mesh/mesh" </string>
 				<string> "mesh/skeleton" </string>
+				<string> "SpotLight" </string>
+				<string> "params/enabled" </string>
+				<string> "params/editor_only" </string>
+				<string> "params/bake_mode" </string>
+				<string> "params/energy" </string>
+				<string> "colors/diffuse" </string>
+				<string> "colors/specular" </string>
+				<string> "shadow/shadow" </string>
+				<string> "shadow/darkening" </string>
+				<string> "shadow/z_offset" </string>
+				<string> "shadow/z_slope_scale" </string>
+				<string> "shadow/esm_multiplier" </string>
+				<string> "shadow/blur_passes" </string>
+				<string> "projector" </string>
+				<string> "operator" </string>
+				<string> "params/radius" </string>
+				<string> "params/attenuation" </string>
+				<string> "params/spot_angle" </string>
+				<string> "params/spot_attenuation" </string>
 				<string> "label" </string>
 				<string> "Label" </string>
 				<string> "visibility/opacity" </string>
@@ -163,11 +182,11 @@
 				<string> "percent_visible" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 9 </int>
+			<int> 10 </int>
 			<string> "nodes" </string>
-			<int_array  len="333"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 3, 11, 7, 12, 8, 13, 3, 14, 9, 15, 4, 16, 10, 17, 11, 18, 11, 19, 2, 20, 3, 21, 12, 22, 2, 23, 3, 24, 3, 25, 13, 26, 14, 27, 14, 28, 15, 29, 16, 30, 17, 31, 13, 32, 13, 0, 0, 0, 34, 33, -1, 6, 2, 0, 3, 1, 35, 6, 4, 2, 36, 5, 37, 3, 0, 0, 0, 34, 38, -1, 6, 2, 0, 3, 1, 35, 8, 4, 2, 36, 7, 37, 3, 0, 0, 0, 40, 39, -1, 6, 2, 0, 3, 1, 35, 18, 4, 2, 41, 2, 42, 19, 0, 0, 0, 43, 31, -1, 3, 2, 0, 3, 1, 4, 2, 0, 4, 0, 45, 44, -1, 14, 2, 0, 3, 1, 35, 20, 4, 2, 46, 13, 47, 21, 48, 22, 49, 23, 50, 9, 51, 3, 52, 24, 53, 25, 54, 11, 55, 11, 0, 5, 0, 56, 56, -1, 18, 2, 0, 3, 1, 35, 26, 4, 2, 14, 9, 57, 2, 58, 27, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 0, 5, 0, 70, 70, -1, 20, 2, 0, 3, 1, 35, 28, 4, 2, 14, 9, 57, 2, 58, 25, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 71, 29, 72, 30, 0, 0, 0, 74, 73, -1, 31, 2, 0, 4, 2, 75, 10, 76, 10, 77, 9, 78, 31, 79, 32, 80, 33, 81, 21, 82, 0, 83, 0, 84, 0, 85, 0, 86, 2, 87, 2, 88, 4, 89, 10, 90, 34, 91, 11, 92, 10, 93, 10, 94, 10, 95, 11, 96, 3, 97, 3, 98, 35, 99, 4, 100, 13, 101, 3, 102, 3, 103, 36, 0 </int_array>
+			<int_array  len="386"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 3, 11, 7, 12, 8, 13, 3, 14, 9, 15, 4, 16, 10, 17, 11, 18, 11, 19, 2, 20, 3, 21, 12, 22, 2, 23, 3, 24, 3, 25, 13, 26, 14, 27, 14, 28, 15, 29, 16, 30, 17, 31, 13, 32, 13, 0, 0, 0, 34, 33, -1, 6, 2, 0, 3, 1, 35, 6, 4, 2, 36, 5, 37, 3, 0, 0, 0, 34, 38, -1, 6, 2, 0, 3, 1, 35, 8, 4, 2, 36, 7, 37, 3, 0, 0, 0, 40, 39, -1, 6, 2, 0, 3, 1, 35, 18, 4, 2, 41, 2, 42, 19, 0, 0, 0, 43, 31, -1, 3, 2, 0, 3, 1, 4, 2, 0, 4, 0, 45, 44, -1, 14, 2, 0, 3, 1, 35, 20, 4, 2, 46, 13, 47, 21, 48, 22, 49, 23, 50, 9, 51, 3, 52, 24, 53, 25, 54, 11, 55, 11, 0, 5, 0, 56, 56, -1, 18, 2, 0, 3, 1, 35, 26, 4, 2, 14, 9, 57, 2, 58, 27, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 0, 5, 0, 70, 70, -1, 20, 2, 0, 3, 1, 35, 28, 4, 2, 14, 9, 57, 2, 58, 25, 59, 2, 60, 2, 61, 11, 62, 11, 63, 11, 64, 3, 65, 3, 66, 3, 67, 3, 68, 3, 69, 13, 71, 29, 72, 30, 0, 5, 0, 73, 73, -1, 23, 2, 0, 3, 1, 35, 31, 4, 2, 14, 9, 74, 2, 75, 3, 76, 13, 77, 32, 78, 33, 79, 34, 80, 2, 81, 11, 82, 35, 83, 11, 84, 36, 85, 10, 86, 25, 87, 13, 88, 37, 89, 32, 90, 38, 91, 10, 0, 0, 0, 93, 92, -1, 31, 2, 0, 4, 2, 94, 10, 95, 10, 96, 9, 97, 39, 98, 40, 99, 41, 100, 21, 101, 0, 102, 0, 103, 0, 104, 0, 105, 2, 106, 2, 107, 4, 108, 10, 109, 42, 110, 11, 111, 10, 112, 10, 113, 10, 114, 11, 115, 3, 116, 3, 117, 43, 118, 4, 119, 13, 120, 3, 121, 3, 122, 44, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="37" shared="false">
+			<array  len="45" shared="false">
 				<node_path> "" </node_path>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<bool> True </bool>
@@ -238,7 +257,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 4.665597 </real>
+									<real> 3.429353 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -248,9 +267,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.362503 </real>
+									<real> 0.450003 </real>
 									<string> "y_rot" </string>
-									<real> 43.062798 </real>
+									<real> 43.237801 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -330,13 +349,21 @@
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0 </transform>
 				<real> 80 </real>
 				<real> 0.1 </real>
-				<real> 100 </real>
+				<real> 1024 </real>
 				<int> -1 </int>
 				<resource name=""></resource>				<transform> 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.75, 0 </transform>
 				<resource  resource_type="Material" path="local://3">  </resource>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.3, -0.3 </transform>
 				<resource  resource_type="Mesh" path="res://media/models/stg44.msh">  </resource>
 				<node_path> ".." </node_path>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0 </transform>
+				<real> 2 </real>
+				<color> 1, 0.980392, 0.705882, 1 </color>
+				<color> 1, 1, 1, 1 </color>
+				<real> 0.05 </real>
+				<real> 60 </real>
+				<real> 3 </real>
+				<real> 25 </real>
 				<real> 1002 </real>
 				<real> 8 </real>
 				<real> 1271 </real>
