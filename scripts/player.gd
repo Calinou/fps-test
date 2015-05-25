@@ -7,6 +7,8 @@ export var pitch = 0
 const max_accel = 0.005
 const air_accel = 0.02
 
+var timer = 0
+
 # Walking speed and jumping height are defined later.
 var walk_speed
 var jump_speed
@@ -17,6 +19,8 @@ func _ready():
 	set_process_input(true)
 	# Capture mouse once game is started:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	set_fixed_process(true)
+	OS.set_iterations_per_second(60)
 
 func _input(event):
 	if event.type == InputEvent.MOUSE_MOTION:
@@ -40,6 +44,14 @@ func _input(event):
 		quit()
 
 func _integrate_forces(state):
+	timer += 1
+
+	if timer >= 8:
+		timer = 0
+
+	if Input.is_action_pressed("attack") and timer == 0:
+		get_node("Sounds").play("rifle")
+
 	# Default walk speed:
 	walk_speed = 4
 	# Default jump height:
@@ -117,6 +129,7 @@ func _integrate_forces(state):
 
 		if Input.is_action_pressed("jump") and stamina > 0:
 			apply_impulse(Vector3(), normal * jump_speed * get_mass())
+			get_node("Sounds").play("jump")
 			stamina -= 150
 
 	else:
