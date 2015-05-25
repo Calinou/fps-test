@@ -84,6 +84,7 @@ func _integrate_forces(state):
 		get_node("Health").set_text(str(int(health), " % Health"))
 		get_node("Stamina").set_text(str(int(stamina / 100), " % Stamina"))
 		#get_node("Direction").set_text(str(int(pitch)))
+		get_node("Crosshair").set_text("+") # Basic crosshair
 
 		apply_impulse(Vector3(), diff * get_mass())
 
