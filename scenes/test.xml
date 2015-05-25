@@ -20,11 +20,11 @@
 		<real name="background/glow"> 0 </real>
 		<nil name="background/canvas_max_layer">  </nil>
 		<bool name="glow/enabled"> True </bool>
-		<int name="glow/blur_passes"> 4 </int>
+		<int name="glow/blur_passes"> 1 </int>
 		<real name="glow/blur_scale"> 1 </real>
 		<real name="glow/blur_strength"> 1 </real>
 		<int name="glow/blur_blend_mode"> 0 </int>
-		<real name="glow/bloom"> 1 </real>
+		<real name="glow/bloom"> 0 </real>
 		<real name="glow/bloom_treshold"> 0.5 </real>
 		<bool name="dof_blur/enabled"> False </bool>
 		<int name="dof_blur/blur_passes"> 3 </int>
@@ -49,7 +49,7 @@
 		<real name="bcs/brightness"> 1 </real>
 		<real name="bcs/contrast"> 1 </real>
 		<real name="bcs/saturation"> 1 </real>
-		<bool name="srgb/enabled"> True </bool>
+		<bool name="srgb/enabled"> False </bool>
 
 	</resource>
 	<resource type="BoxShape" path="local://2">
@@ -689,9 +689,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.333298 </real>
+									<real> 0.383298 </real>
 									<string> "y_rot" </string>
-									<real> 83.337486 </real>
+									<real> 89.39949 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
