@@ -106,10 +106,10 @@ func _integrate_forces(state):
 
 		# FPS counter:
 		get_node("FPS").set_text(str(OS.get_frames_per_second(), " FPS"))
-		# Health status:
-		get_node("Health").set_text(str(int(health), " % Health"))
+		# Health status (currently hidden):
+		#get_node("Health").set_text(str(int(health), " % Health"))
 		# Stamina status:
-		get_node("Stamina").set_text(str(int(stamina / 100), " % Stamina"))
+		get_node("Stamina").set_value(stamina)
 		# Basic crosshair:
 		get_node("Crosshair").set_text("+")
 
