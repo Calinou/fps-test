@@ -12,13 +12,18 @@ var timer = 0
 # Walking speed and jumping height are defined later.
 var walk_speed
 var jump_speed
+
 var health = 100
 var stamina = 10000
 
 func _ready():
+	# Process input:
 	set_process_input(true)
+
 	# Capture mouse once game is started:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+	# 60 FPS physics:
 	set_fixed_process(true)
 	OS.set_iterations_per_second(60)
 
@@ -27,8 +32,8 @@ func _input(event):
 		yaw = fmod(yaw - event.relative_x * view_sensitivity, 360)
 		# Quake-like minimum pitch -80, maximum pitch 70:
 		pitch = max(min(pitch - event.relative_y * view_sensitivity, 70), -80)
-		get_node("yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
-		get_node("yaw/camera").set_rotation(Vector3(deg2rad(pitch), 0, 0))
+		get_node("Yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
+		get_node("Yaw/Camera").set_rotation(Vector3(deg2rad(pitch), 0, 0))
 
 	# Toggle mouse capture:
 	if Input.is_action_pressed("toggle_mouse_capture"):
@@ -65,7 +70,7 @@ func _integrate_forces(state):
 	if stamina <= 0:
 		stamina = 0
 
-	var aim = get_node("yaw").get_global_transform().basis
+	var aim = get_node("Yaw").get_global_transform().basis
 
 	var direction = Vector3()
 
@@ -85,7 +90,7 @@ func _integrate_forces(state):
 		stamina -= 10
 
 	direction = direction.normalized()
-	var ray = get_node("ray")
+	var ray = get_node("Ray")
 
 	if ray.is_colliding():
 		var up = state.get_total_gravity().normalized()
@@ -108,7 +113,7 @@ func _integrate_forces(state):
 			transform = transform.rotated(Vector3(0, 0, 1), floor_angular_vel.z)
 			floor_velocity += transform.xform_inv(point) - point
 			yaw = fmod(yaw + rad2deg(floor_angular_vel.y) * state.get_step(), 360)
-			get_node("yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
+			get_node("Yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
 
 		var diff = floor_velocity + direction * walk_speed - state.get_linear_velocity()
 		var vertdiff = aim[1] * diff.dot(aim[1])
