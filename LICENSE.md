@@ -1,4 +1,4 @@
-This is the license for the source code. For media, please see the LICENSE.md files inside the `media` directory.
+**This is the license for the source code.** For media, please see the LICENSE.md files inside the `media` directory.
 
 The MIT License (MIT)
 =====================

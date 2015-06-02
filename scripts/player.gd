@@ -1,3 +1,7 @@
+# Copyright (c) 2015 Calinou
+# This source code form is governed by the MIT license.
+# See LICENSE.md for more information.
+
 extends RigidBody
 
 export var view_sensitivity = 0.25
@@ -63,7 +67,7 @@ func _integrate_forces(state):
 	jump_speed = 3
 	# Regenerate stamina:
 	stamina += 5
-	
+
 	# Cap stamina:
 	if stamina >= 10000:
 		stamina = 10000

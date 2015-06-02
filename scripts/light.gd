@@ -1,3 +1,7 @@
+# Copyright (c) 2015 Calinou
+# This source code form is governed by the MIT license.
+# See LICENSE.md for more information.
+
 extends SpotLight
 
 # Timer to prevent flickering:
@@ -11,7 +15,7 @@ func _fixed_process(delta):
 	timer = timer + 1
 	if timer >= 20:
 		timer = 20
-	
+
 	if Input.is_action_pressed("toggle_flashlight") and get_parameter(PARAM_ENERGY) == 2 and timer == 20:
 		set_parameter(PARAM_ENERGY, 0)
 		print("Flashlight turned off.")
