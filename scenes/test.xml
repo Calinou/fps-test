@@ -734,7 +734,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 6.347497 </real>
+									<real> 10.07268 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -746,7 +746,7 @@
 									<string> "x_rot" </string>
 									<real> 0.358297 </real>
 									<string> "y_rot" </string>
-									<real> 182.117874 </real>
+									<real> 187.617599 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -805,7 +805,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 2 </int>
 							<string> "sources" </string>
 							<array  len="3" shared="false">
 								<string> "res://scripts/player.gd" </string>
