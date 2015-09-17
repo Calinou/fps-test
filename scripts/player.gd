@@ -19,6 +19,7 @@ var jump_speed
 
 var health = 100
 var stamina = 10000
+var ray_length = 10
 
 func _ready():
 	# Process input:
@@ -34,8 +35,8 @@ func _ready():
 func _input(event):
 	if event.type == InputEvent.MOUSE_MOTION:
 		yaw = fmod(yaw - event.relative_x * view_sensitivity, 360)
-		# Quake-like minimum pitch -80, maximum pitch 70:
-		pitch = max(min(pitch - event.relative_y * view_sensitivity, 70), -80)
+		# Quake-like minimum pitch -80, maximum pitch 80:
+		pitch = max(min(pitch - event.relative_y * view_sensitivity, 80), -80)
 		get_node("Yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
 		get_node("Yaw/Camera").set_rotation(Vector3(deg2rad(pitch), 0, 0))
 
@@ -51,6 +52,19 @@ func _input(event):
 	# Quit the game:
 	if Input.is_action_pressed("quit"):
 		quit()
+
+
+	if event.type == InputEvent.MOUSE_BUTTON and event.pressed and event.button_index==1:
+		var camera = get_node("Yaw/Camera")
+		var from = camera.project_ray_origin(event.pos)
+		var to = from + camera.project_ray_normal(event.pos) * ray_length
+		var bullet_impact_scene = preload("res://scenes/bullet_impact.xml")
+		var world = get_node("/root/World")
+		var bullet_impact = bullet_impact_scene.instance()
+		bullet_impact.get_node("RigidBody").set_translation(from)
+		bullet_impact.get_node("RigidBody").set_linear_velocity(to)
+		world.add_child(bullet_impact)
+
 
 func _integrate_forces(state):
 	timer += 1

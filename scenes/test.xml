@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="6" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
 	<ext_resource path="res://scripts/main.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://scenes/level.scn" type="PackedScene" index="3"></ext_resource>
 	<ext_resource path="res://scripts/environment.gd" type="Script" index="1"></ext_resource>
 	<ext_resource path="res://scenes/player.xml" type="PackedScene" index="2"></ext_resource>
-	<ext_resource path="res://scenes/level.scn" type="PackedScene" index="3"></ext_resource>
 	<resource type="Environment" path="local://1">
 		<bool name="ambient_light/enabled"> True </bool>
 		<color name="ambient_light/color"> 0.2, 0.2, 0.2, 1 </color>
@@ -103,7 +103,7 @@
 				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -155,7 +155,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 101.357941 </real>
+									<real> 63.872692 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -165,9 +165,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 1.570796 </real>
+									<real> 0.520796 </real>
 									<string> "y_rot" </string>
-									<real> 196.280151 </real>
+									<real> 201.392761 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="12" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
 	<ext_resource path="res://scripts/player.gd" type="Script" index="0"></ext_resource>
-	<ext_resource path="res://fonts/roboto.fnt" type="Font" index="2"></ext_resource>
 	<ext_resource path="res://media/sounds/rifle.smp" type="Sample" index="4"></ext_resource>
+	<ext_resource path="res://fonts/roboto.fnt" type="Font" index="2"></ext_resource>
 	<ext_resource path="res://media/models/stg44.msh" type="Mesh" index="1"></ext_resource>
 	<ext_resource path="res://media/sounds/jump.smp" type="Sample" index="3"></ext_resource>
 	<resource type="CapsuleShape" path="local://1">
@@ -243,7 +243,7 @@
 				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "3D" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -295,7 +295,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 2.520677 </real>
+									<real> 4.665597 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -305,9 +305,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.195796 </real>
+									<real> 0.270796 </real>
 									<string> "y_rot" </string>
-									<real> 53.87571 </real>
+									<real> 64.513184 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
