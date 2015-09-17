@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="13" version="1.1" version_name="Godot Engine v1.1.stable.custom_build">
-	<ext_resource path="res://scripts/player.gd" type="Script"></ext_resource>
-	<ext_resource path="res://media/models/stg44.msh" type="Mesh"></ext_resource>
-	<ext_resource path="res://scripts/light.gd" type="Script"></ext_resource>
-	<ext_resource path="res://fonts/roboto.fnt" type="Font"></ext_resource>
-	<ext_resource path="res://media/sounds/jump.smp" type="Sample"></ext_resource>
-	<ext_resource path="res://media/sounds/rifle.smp" type="Sample"></ext_resource>
+<resource_file type="PackedScene" subresource_count="12" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
+	<ext_resource path="res://scripts/player.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://fonts/roboto.fnt" type="Font" index="2"></ext_resource>
+	<ext_resource path="res://media/sounds/rifle.smp" type="Sample" index="4"></ext_resource>
+	<ext_resource path="res://media/models/stg44.msh" type="Mesh" index="1"></ext_resource>
+	<ext_resource path="res://media/sounds/jump.smp" type="Sample" index="3"></ext_resource>
 	<resource type="CapsuleShape" path="local://1">
 		<real name="radius"> 0.4 </real>
 		<real name="height"> 0.5 </real>
@@ -79,7 +78,7 @@
 			<string> "pitch" </string>
 			<real> 1 </real>
 			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://media/sounds/jump.smp">  </resource>
+			<resource  external="3">  </resource>
 		</dictionary>
 		<dictionary name="samples/rifle" shared="false">
 			<string> "db" </string>
@@ -87,7 +86,7 @@
 			<string> "pitch" </string>
 			<real> 1 </real>
 			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://media/sounds/rifle.smp">  </resource>
+			<resource  external="4">  </resource>
 		</dictionary>
 
 	</resource>
@@ -98,12 +97,10 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="149">
+			<string_array  len="120">
 				<string> "Player" </string>
 				<string> "RigidBody" </string>
-				<string> "_import_path" </string>
 				<string> "_import_transform" </string>
-				<string> "visibility/visible" </string>
 				<string> "input/ray_pickable" </string>
 				<string> "input/capture_on_drag" </string>
 				<string> "shape_count" </string>
@@ -118,6 +115,7 @@
 				<string> "mass" </string>
 				<string> "friction" </string>
 				<string> "bounce" </string>
+				<string> "gravity_scale" </string>
 				<string> "custom_integrator" </string>
 				<string> "continuous_cd" </string>
 				<string> "contacts_reported" </string>
@@ -127,6 +125,8 @@
 				<string> "axis_lock" </string>
 				<string> "velocity/linear" </string>
 				<string> "velocity/angular" </string>
+				<string> "damp_override/linear" </string>
+				<string> "damp_override/angular" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "view_sensitivity" </string>
@@ -137,6 +137,7 @@
 				<string> "transform/local" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
 				<string> "Leg" </string>
 				<string> "Ray" </string>
 				<string> "RayCast" </string>
@@ -174,44 +175,16 @@
 				<string> "MeshInstance" </string>
 				<string> "mesh/mesh" </string>
 				<string> "mesh/skeleton" </string>
-				<string> "Flashlight" </string>
-				<string> "SpotLight" </string>
-				<string> "params/enabled" </string>
-				<string> "params/editor_only" </string>
-				<string> "params/bake_mode" </string>
-				<string> "params/energy" </string>
-				<string> "colors/diffuse" </string>
-				<string> "colors/specular" </string>
-				<string> "shadow/shadow" </string>
-				<string> "shadow/darkening" </string>
-				<string> "shadow/z_offset" </string>
-				<string> "shadow/z_slope_scale" </string>
-				<string> "shadow/esm_multiplier" </string>
-				<string> "shadow/blur_passes" </string>
-				<string> "projector" </string>
-				<string> "operator" </string>
-				<string> "params/radius" </string>
-				<string> "params/attenuation" </string>
-				<string> "params/spot_angle" </string>
-				<string> "params/spot_attenuation" </string>
 				<string> "FPS" </string>
 				<string> "Label" </string>
-				<string> "visibility/opacity" </string>
-				<string> "visibility/self_opacity" </string>
-				<string> "visibility/light_mask" </string>
 				<string> "anchor/right" </string>
 				<string> "margin/left" </string>
 				<string> "margin/top" </string>
 				<string> "margin/right" </string>
 				<string> "margin/bottom" </string>
-				<string> "focus_neighbour/left" </string>
-				<string> "focus_neighbour/top" </string>
-				<string> "focus_neighbour/right" </string>
-				<string> "focus_neighbour/bottom" </string>
 				<string> "focus/ignore_mouse" </string>
 				<string> "focus/stop_mouse" </string>
 				<string> "size_flags/horizontal" </string>
-				<string> "size_flags/stretch_ratio" </string>
 				<string> "custom_fonts/font" </string>
 				<string> "range/min" </string>
 				<string> "range/max" </string>
@@ -220,11 +193,8 @@
 				<string> "range/value" </string>
 				<string> "range/exp_edit" </string>
 				<string> "rounded_values" </string>
-				<string> "text" </string>
 				<string> "align" </string>
 				<string> "valign" </string>
-				<string> "autowrap" </string>
-				<string> "uppercase" </string>
 				<string> "percent_visible" </string>
 				<string> "Direction" </string>
 				<string> "anchor/top" </string>
@@ -250,12 +220,11 @@
 				<string> "config/samples" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 15 </int>
+			<int> 14 </int>
 			<string> "nodes" </string>
-			<int_array  len="721"> 				-1, -1, 1, 0, -1, 31, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 3, 11, 7, 12, 8, 13, 3, 14, 9, 15, 4, 16, 10, 17, 11, 18, 11, 19, 2, 20, 3, 21, 12, 22, 2, 23, 3, 24, 3, 25, 13, 26, 14, 27, 14, 28, 15, 29, 16, 30, 17, 31, 13, 32, 13, 0, 0, 0, 34, 33, -1, 6, 2, 0, 3, 1, 35, 6, 4, 2, 36, 5, 37, 3, 0, 0, 0, 34, 38, -1, 6, 2, 0, 3, 1, 35, 8, 4, 2, 36, 7, 37, 3, 0, 0, 0, 40, 39, -1, 6, 2, 0, 3, 1, 35, 18, 4, 2, 41, 2, 42, 19, 0, 0, 0, 44, 43, -1, 3, 2, 0, 3, 1, 4, 2, 0, 4, 0, 45, 45, -1, 14, 2, 0, 3, 1, 35, 20, 4, 2, 46, 13, 47, 21, 48, 22, 49, 23, 50, 9, 51, 3, 52, 24, 53, 25, 54, 11, 55, 11, 0, 5, 0, 57, 56, -1, 18, 2, 0, 3, 1, 35, 26, 4, 2, 14, 9, 58, 2, 59, 27, 60, 2, 61, 2, 62, 11, 63, 11, 64, 11, 65, 3, 66, 3, 67, 3, 68, 3, 69, 3, 70, 13, 0, 5, 0, 72, 71, -1, 20, 2, 0, 3, 1, 35, 28, 4, 2, 14, 9, 58, 2, 59, 25, 60, 2, 61, 2, 62, 11, 63, 11, 64, 11, 65, 3, 66, 3, 67, 3, 68, 3, 69, 3, 70, 13, 73, 29, 74, 30, 0, 5, 0, 76, 75, -1, 24, 2, 0, 3, 1, 35, 31, 4, 2, 14, 9, 77, 2, 78, 3, 79, 13, 80, 32, 81, 33, 82, 34, 83, 2, 84, 11, 85, 35, 86, 11, 87, 36, 88, 10, 89, 25, 90, 13, 91, 37, 92, 32, 93, 38, 94, 10, 28, 39, 0, 0, 0, 96, 95, -1, 32, 2, 0, 4, 2, 97, 10, 98, 10, 99, 9, 100, 9, 101, 40, 102, 41, 103, 42, 104, 43, 105, 0, 106, 0, 107, 0, 108, 0, 109, 2, 110, 2, 111, 4, 112, 10, 113, 44, 114, 11, 115, 10, 116, 10, 117, 10, 118, 11, 119, 3, 120, 3, 121, 45, 122, 4, 123, 9, 124, 3, 125, 3, 126, 46, 0, 0, 0, 96, 127, -1, 34, 2, 0, 4, 2, 97, 10, 98, 10, 99, 9, 128, 4, 100, 9, 129, 9, 101, 47, 102, 48, 103, 42, 104, 49, 105, 0, 106, 0, 107, 0, 108, 0, 109, 2, 110, 2, 111, 4, 112, 10, 113, 44, 114, 11, 115, 10, 116, 10, 117, 10, 118, 11, 119, 3, 120, 3, 121, 45, 122, 4, 123, 9, 124, 3, 125, 3, 126, 46, 0, 0, 0, 96, 130, -1, 35, 2, 0, 4, 2, 97, 10, 98, 10, 99, 9, 131, 50, 128, 4, 100, 50, 129, 9, 101, 51, 102, 52, 103, 53, 104, 42, 105, 0, 106, 0, 107, 0, 108, 0, 109, 2, 110, 2, 111, 4, 112, 10, 113, 44, 114, 11, 115, 10, 116, 10, 117, 10, 118, 11, 119, 3, 120, 3, 121, 45, 122, 4, 123, 9, 124, 3, 125, 3, 126, 46, 0, 0, 0, 133, 132, -1, 32, 2, 0, 4, 2, 97, 10, 98, 10, 99, 9, 131, 50, 128, 9, 100, 50, 129, 9, 101, 54, 102, 55, 103, 56, 104, 57, 105, 0, 106, 0, 107, 0, 108, 0, 109, 2, 110, 2, 111, 4, 112, 10, 134, 58, 135, 59, 113, 44, 114, 11, 115, 60, 116, 11, 117, 11, 118, 11, 119, 3, 120, 3, 136, 2, 0, 0, 0, 96, 137, -1, 35, 2, 0, 4, 2, 97, 10, 98, 10, 99, 9, 131, 50, 128, 50, 100, 50, 129, 50, 101, 61, 102, 62, 103, 63, 104, 64, 105, 0, 106, 0, 107, 0, 108, 0, 109, 2, 110, 2, 111, 4, 112, 10, 113, 44, 114, 11, 115, 10, 116, 10, 117, 10, 118, 11, 119, 3, 120, 3, 121, 45, 122, 9, 123, 9, 124, 3, 125, 3, 126, 46, 0, 0, 0, 139, 138, -1, 12, 2, 0, 3, 1, 4, 2, 140, 65, 141, 10, 142, 10, 143, 66, 144, 10, 145, 67, 146, 68, 147, 9, 148, 69, 0 </int_array>
+			<int_array  len="516"> 				-1, -1, 1, 0, -1, 32, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 2, 9, 6, 10, 7, 11, 2, 12, 8, 13, 3, 14, 9, 15, 10, 16, 10, 17, 9, 18, 1, 19, 2, 20, 11, 21, 1, 22, 2, 23, 2, 24, 12, 25, 13, 26, 13, 27, 14, 28, 14, 29, 15, 30, 16, 31, 17, 32, 12, 33, 12, 0, 0, 0, 35, 34, -1, 5, 2, 0, 36, 5, 37, 4, 38, 2, 39, 12, 0, 0, 0, 35, 40, -1, 5, 2, 0, 36, 7, 37, 6, 38, 2, 39, 8, 0, 0, 0, 42, 41, -1, 4, 2, 0, 36, 18, 43, 1, 44, 19, 0, 0, 0, 46, 45, -1, 1, 2, 0, 0, 4, 0, 47, 47, -1, 12, 2, 0, 36, 20, 48, 12, 49, 21, 50, 22, 51, 23, 52, 8, 53, 2, 54, 24, 55, 25, 56, 10, 57, 10, 0, 5, 0, 59, 58, -1, 16, 2, 0, 36, 26, 12, 8, 60, 1, 61, 27, 62, 1, 63, 1, 64, 10, 65, 10, 66, 10, 67, 2, 68, 2, 69, 2, 70, 2, 71, 2, 72, 12, 0, 5, 0, 74, 73, -1, 18, 2, 0, 36, 28, 12, 8, 60, 1, 61, 25, 62, 1, 63, 1, 64, 10, 65, 10, 66, 10, 67, 2, 68, 2, 69, 2, 70, 2, 71, 2, 72, 12, 75, 29, 76, 30, 0, 0, 0, 78, 77, -1, 19, 79, 8, 80, 31, 81, 32, 82, 33, 83, 34, 84, 1, 85, 1, 86, 3, 87, 35, 88, 10, 89, 9, 90, 9, 91, 9, 92, 10, 93, 2, 94, 2, 95, 3, 96, 8, 97, 14, 0, 0, 0, 78, 98, -1, 21, 99, 3, 79, 8, 100, 8, 80, 36, 81, 37, 82, 33, 83, 38, 84, 1, 85, 1, 86, 3, 87, 35, 88, 10, 89, 9, 90, 9, 91, 9, 92, 10, 93, 2, 94, 2, 95, 3, 96, 8, 97, 14, 0, 0, 0, 78, 101, -1, 22, 102, 39, 99, 3, 79, 39, 100, 8, 80, 40, 81, 41, 82, 42, 83, 33, 84, 1, 85, 1, 86, 3, 87, 35, 88, 10, 89, 9, 90, 9, 91, 9, 92, 10, 93, 2, 94, 2, 95, 3, 96, 8, 97, 14, 0, 0, 0, 104, 103, -1, 22, 102, 39, 99, 8, 79, 39, 100, 8, 80, 43, 81, 44, 82, 45, 83, 46, 84, 1, 85, 1, 86, 3, 105, 47, 106, 48, 87, 35, 88, 10, 89, 49, 90, 10, 91, 10, 92, 10, 93, 2, 94, 2, 107, 1, 0, 0, 0, 78, 108, -1, 22, 102, 39, 99, 39, 79, 39, 100, 39, 80, 50, 81, 51, 82, 52, 83, 53, 84, 1, 85, 1, 86, 3, 87, 35, 88, 10, 89, 9, 90, 9, 91, 9, 92, 10, 93, 2, 94, 2, 95, 8, 96, 8, 97, 14, 0, 0, 0, 110, 109, -1, 10, 2, 0, 111, 54, 112, 9, 113, 9, 114, 55, 115, 9, 116, 56, 117, 57, 118, 8, 119, 58, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="70" shared="false">
-				<node_path> "" </node_path>
+			<array  len="59" shared="false">
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<bool> True </bool>
 				<bool> False </bool>
@@ -270,7 +239,8 @@
 				<int> 8 </int>
 				<int> 0 </int>
 				<vector3> 0, 0, 0 </vector3>
-				<resource  resource_type="Script" path="res://scripts/player.gd">  </resource>
+				<real> -1 </real>
+				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
@@ -393,15 +363,10 @@
 							<string> "znear" </string>
 							<real> 0.1 </real>
 						</dictionary>
-						<string> "Script" </string>
+						<string> "Anim" </string>
 						<dictionary  shared="false">
-							<string> "current" </string>
-							<int> 1 </int>
-							<string> "sources" </string>
-							<array  len="2" shared="false">
-								<string> "res://scripts/player.gd" </string>
-								<string> "res://scripts/light.gd" </string>
-							</array>
+							<string> "visible" </string>
+							<bool> False </bool>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
@@ -423,24 +388,13 @@
 				<resource name=""></resource>				<transform> 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.75, 0 </transform>
 				<resource  resource_type="Material" path="local://3">  </resource>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.3, -0.3 </transform>
-				<resource  resource_type="Mesh" path="res://media/models/stg44.msh">  </resource>
+				<resource  external="1">  </resource>
 				<node_path> ".." </node_path>
-				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0 </transform>
-				<real> 2 </real>
-				<color> 1, 0.980392, 0.705882, 1 </color>
-				<color> 1, 1, 1, 1 </color>
-				<real> 0.05 </real>
-				<real> 60 </real>
-				<real> 3 </real>
-				<real> 25 </real>
-				<resource  resource_type="Script" path="res://scripts/light.gd">  </resource>
 				<real> 1002 </real>
 				<real> 10 </real>
 				<real> 9 </real>
 				<real> 55 </real>
-				<resource  resource_type="Font" path="res://fonts/roboto.fnt">  </resource>
-				<string> "" </string>
-				<real> -1 </real>
+				<resource  external="2">  </resource>
 				<real> 1003 </real>
 				<real> 0.911111 </real>
 				<real> 11 </real>
