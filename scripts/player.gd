@@ -4,9 +4,10 @@
 
 extends RigidBody
 
-export var view_sensitivity = 0.25
-export var yaw = 0
-export var pitch = 0
+var view_sensitivity = 0.25
+var yaw = 0
+var pitch = 0
+var is_moving = false
 
 const max_accel = 0.005
 const air_accel = 0.02
@@ -22,21 +23,18 @@ var stamina = 10000
 var ray_length = 10
 
 func _ready():
-	# Process input:
 	set_process_input(true)
 
 	# Capture mouse once game is started:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# 60 FPS physics:
 	set_fixed_process(true)
-	OS.set_iterations_per_second(60)
+	get_node("Crosshair").set_text("+")
 
 func _input(event):
 	if event.type == InputEvent.MOUSE_MOTION:
 		yaw = fmod(yaw - event.relative_x * view_sensitivity, 360)
-		# Quake-like minimum pitch -80, maximum pitch 80:
-		pitch = max(min(pitch - event.relative_y * view_sensitivity, 80), -80)
+		pitch = max(min(pitch - event.relative_y * view_sensitivity, 85), -85)
 		get_node("Yaw").set_rotation(Vector3(0, deg2rad(yaw), 0))
 		get_node("Yaw/Camera").set_rotation(Vector3(deg2rad(pitch), 0, 0))
 
@@ -58,15 +56,18 @@ func _input(event):
 		var camera = get_node("Yaw/Camera")
 		var from = camera.project_ray_origin(event.pos)
 		var to = from + camera.project_ray_normal(event.pos) * ray_length
+
 		var bullet_impact_scene = preload("res://scenes/bullet_impact.xml")
 		var world = get_node("/root/World")
 		var bullet_impact = bullet_impact_scene.instance()
+
 		bullet_impact.get_node("RigidBody").set_translation(from)
 		bullet_impact.get_node("RigidBody").set_linear_velocity(to)
 		world.add_child(bullet_impact)
 
-
-func _integrate_forces(state):
+func _fixed_process(delta):
+	get_node("FPS").set_text(str(OS.get_frames_per_second(), " FPS"))
+	get_node("Stamina").set_value(stamina)
 	timer += 1
 
 	if timer >= 8:
@@ -74,13 +75,15 @@ func _integrate_forces(state):
 
 	if Input.is_action_pressed("attack") and timer == 0:
 		get_node("Sounds").play("rifle")
+	
+	is_moving = false
 
+
+func _integrate_forces(state):
 	# Default walk speed:
-	walk_speed = 4
+	walk_speed = 3.5
 	# Default jump height:
 	jump_speed = 3
-	# Regenerate stamina:
-	stamina += 5
 
 	# Cap stamina:
 	if stamina >= 10000:
@@ -94,21 +97,25 @@ func _integrate_forces(state):
 
 	if Input.is_action_pressed("move_forwards"):
 		direction -= aim[2]
+		is_moving = true
 	if Input.is_action_pressed("move_backwards"):
 		direction += aim[2]
+		is_moving = true
 	if Input.is_action_pressed("move_left"):
 		direction -= aim[0]
+		is_moving = true
 	if Input.is_action_pressed("move_right"):
 		direction += aim[0]
-
-	# Increase walk speed and jump height while running and decrement stamina:
-	if Input.is_action_pressed("run") and stamina > 0:
-		walk_speed *= 1.35
-		jump_speed *= 1.35
-		stamina -= 10
+		is_moving = true
 
 	direction = direction.normalized()
 	var ray = get_node("Ray")
+	
+	# Increase walk speed and jump height while running and decrement stamina:
+	if Input.is_action_pressed("run") and is_moving and ray.is_colliding() and stamina > 0:
+		walk_speed *= 1.4
+		jump_speed *= 1.2
+		stamina -= 15
 
 	if ray.is_colliding():
 		var up = state.get_total_gravity().normalized()
@@ -139,18 +146,12 @@ func _integrate_forces(state):
 		diff = diff.normalized() * clamp(diff.length(), 0, max_accel / state.get_step())
 		diff += vertdiff
 
-		# FPS counter:
-		get_node("FPS").set_text(str(OS.get_frames_per_second(), " FPS"))
-		# Health status (currently hidden):
-		#get_node("Health").set_text(str(int(health), " % Health"))
-		# Stamina status:
-		get_node("Stamina").set_value(stamina)
-		# Basic crosshair:
-		get_node("Crosshair").set_text("+")
-
 		apply_impulse(Vector3(), diff * get_mass())
 
-		if Input.is_action_pressed("jump") and stamina > 0:
+		# Regenerate stamina:
+		stamina += 5
+
+		if Input.is_action_pressed("jump") and stamina > 150:
 			apply_impulse(Vector3(), normal * jump_speed * get_mass())
 			get_node("Sounds").play("jump")
 			stamina -= 150
