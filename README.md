@@ -1,4 +1,13 @@
-**This is a working FPS demo. Has bouncy cubes.**
+# FPS Test
+
+___
+
+**This repository is no longer maintained. The project is only compatible with
+Godot 2.x, not Godot 3.x or later.**
+
+___
+
+This is a working FPS demo.
 
 [*Original code by LeeZH.*](http://reddit.com/r/godot/comments/21vp08/i_made_an_fps_demo/)
 
